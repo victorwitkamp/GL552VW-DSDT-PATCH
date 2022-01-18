@@ -9138,7 +9138,8 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     }
 
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
-    {
+    {If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+
         RWAK (Arg0)
         \_SB.PCI0.NWAK (Arg0)
         \_SB.PCI0.LPCB.SWAK (Arg0)
