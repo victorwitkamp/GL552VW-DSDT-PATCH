@@ -31746,6 +31746,11 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                 Return (MEMD) /* \_SB_.ATKD.MEMD */
             }
+            Method (SKBV, 1, NotSerialized)
+            {
+                ^^PCI0.LPCB.EC0.WRAM (0x04B1, Arg0)
+                Return (Arg0)
+            }
         }
     }
 
