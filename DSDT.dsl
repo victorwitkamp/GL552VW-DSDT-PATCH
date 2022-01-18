@@ -8975,6 +8975,14 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     SBBE,   8, 
                     SBBF,   8
                 }
+                Method (_DSM, 4, NotSerialized)
+                {
+                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    Return (Package()
+                    {
+                        "compatible", "pci8086,9cc1",
+                    })
+                }
             }
         }
     }
