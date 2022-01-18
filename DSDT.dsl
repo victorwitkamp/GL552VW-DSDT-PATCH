@@ -15917,7 +15917,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     }
 
     Name (ECUP, One)
-    Mutex (EHLD, 0x00)
+    Mutex(EHLD, 0)
     Scope (\)
     {
         Device (CHUB)
@@ -15992,7 +15992,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
         }
     }
 
-    Mutex (MUTX, 0x00)
+    Mutex(MUTX, 0)
     OperationRegion (PRT0, SystemIO, 0x80, 0x04)
     Field (PRT0, DWordAcc, Lock, Preserve)
     {
@@ -29329,8 +29329,8 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 Return (Local0)
             }
 
-            Mutex (MUEC, 0x00)
-            Mutex (MU4T, 0x00)
+            Mutex(MUEC, 0)
+            Mutex(MU4T, 0)
             Name (ECFL, Ones)
             Method (ECAV, 0, NotSerialized)
             {
@@ -29813,7 +29813,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 THH1,   8
             }
 
-            Mutex (CMUT, 0x00)
+            Mutex(CMUT, 0)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 If (LLessEqual (MSOS (), OSME))
@@ -32684,7 +32684,7 @@ Else
             }
         }
 
-        Mutex (MMPX, 0x00)
+        Mutex(MMPX, 0)
         Method (BATO, 0, Serialized)
         {
             Acquire (MMPX, 0xFFFF)
@@ -36295,7 +36295,7 @@ Else
             Return (Local0)
         }
 
-        Mutex (MUEP, 0x00)
+        Mutex(MUEP, 0)
         Method (RBEP, 1, NotSerialized)
         {
             Store (0xFFFF, Local1)
@@ -38681,7 +38681,7 @@ Else
             Return (Zero)
         }
 
-        Mutex (P4SM, 0x00)
+        Mutex(P4SM, 0)
         Method (SBYT, 2, Serialized)
         {
             Acquire (P4SM, 0xFFFF)
@@ -39113,7 +39113,7 @@ Else
         Name (XSCT, 0x18)
         Name (XSST, 0x1A)
         Name (XRCT, 0x1C)
-        Mutex (MUTE, 0x00)
+        Mutex(MUTE, 0)
         Method (BDFR, 4, NotSerialized)
         {
             ShiftLeft (Arg0, 0x14, Arg0)
