@@ -3418,6 +3418,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 0x12
             }
         })
+        Device(ALS0)
+        {
+            Name(_HID, "ACPI0008")
+            Name(_CID, "smc-als")
+            Name(_ALI, 150)
+            Name(_ALR, Package()
+            {
+                Package() { 100, 150 },
+            })
+        }
     }
 
     Scope (_SB)
